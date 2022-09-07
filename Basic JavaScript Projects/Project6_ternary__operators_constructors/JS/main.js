@@ -19,3 +19,15 @@ function myFunction() {                                                         
     "Erik drives a " + Erik.Vehicle_Color + "-colored " + Erik.Vehicle_Model +
     " manufactured in " + Erik.Vehicle_Year;
 }
+
+function info(Model, Make) {
+    document.write(Model + " is manufactured by " + Make+"<br>");
+}
+    function first(Model, Make) {
+        document.write("What company makes the " + Model + "?" + "<br>")
+        info(Model, Make);
+    }
+first("Viper", "Dodge");
+first("Trail Hawk", "Jeep");
+first("Pinto", "Ford");
+
