@@ -34,7 +34,7 @@ function placeXOrO(squareNumber) {
             activePlayer = 'X';
         }
         //This function plays placement sound.
-        audio('.media/place.mp3');
+        audio('./media/place.mp3');
         //This condition checks to see if it is the computer's turn.
         if (activePlayer === 'O') {
             //This function disables clicking for computer's turn.
@@ -90,11 +90,11 @@ function checkWinConditions() {
     // O 3, 4, 5 condition.
     else if (arrayIncludes('3O', '4O', '5O')) { drawWinLine(50, 304, 558, 304) }
     // O 6, 7, 8 condition.
-    else if (arrayIncludes('0O', '7O', '8O')) { drawWinLine(50, 508, 558, 508) }
+    else if (arrayIncludes('6O', '7O', '8O')) { drawWinLine(50, 508, 558, 508) }
     // O 0, 3, 6 condition.
-    else if (arrayIncludes('0O', '3O', '6O')) { drawWinLine(100, 50, 304, 558) }
+    else if (arrayIncludes('0O', '3O', '6O')) { drawWinLine(100, 50, 100, 558) }
     // O 1, 4, 7 condition.
-    else if (arrayIncludes('0O', '4O', '7O')) { drawWinLine(304, 50, 304, 558) }
+    else if (arrayIncludes('1O', '4O', '7O')) { drawWinLine(304, 50, 304, 558) }
     // O 2, 5, 8 condition.
     else if (arrayIncludes('2O', '5O', '8O')) { drawWinLine(508, 50, 508, 558) }
     // O 6, 4, 2 condition.
@@ -109,6 +109,7 @@ function checkWinConditions() {
         //This functions sets a .3 second timer before the resetGame is called.
         setTimeout(function () { resetGame(); }, 500);
     }
+}
     //This function checks if an array includes 3 strings. It is used to check for
     //each win condition.
     function arrayIncludes(squareA, squareB, squareC) {
@@ -120,7 +121,7 @@ function checkWinConditions() {
         //true is returned and our else if condition executes the drawLine() function.
         if (a === true && b === true && c === true) { return true; }
     }
-}
+
 
 //This function makes our body element temporarily unclickable.
 function disableClick() {
@@ -134,7 +135,7 @@ function audio(audioURL) {
     //We create a new audio object and we pass the path as a parameter.
     let audio = new Audio(audioURL);
     //Play method plays our audio sound.
-    audio.Play();
+    audio.play();
 }
 
 //This function utilizes HTML canvas to draw win lines.
