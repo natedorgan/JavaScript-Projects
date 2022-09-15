@@ -20,17 +20,17 @@
 		ajax.open('GET', 'content.html');
 		
 		//step 3 define ajax response callback method
-		ajax.onreadystatechange = function() (
-			if (ajax.readyState = 4) (
+		ajax.onreadystatechange = function() {
+			if (ajax.readyState = 4) {
 				document.getElementById('content').innerHTML = ajax.responseText;
-			)
-		)
+			}
+		}
 		
 		//Step 4 send ajax request for data
-		function getContent() (
+		function getContent() {
 			ajax.send();
 			document.getElementById('btn_content').style.display = 'none';
-		)
+		}
 		
 			
 		</script>
